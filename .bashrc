@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -63,9 +59,7 @@ parse_git_branch() {
 if [ "$color_prompt" = yes ]; then
 
     PS1=' ${debian_chroot:+($debian_chroot)}\[\e[32m\]\u@\h\[\e[39m\]:\[\e[34m\]\w\[\e[91m\]$(__git_ps1 "(%s)")\[\e[39m\]\$ '
-    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     PS1=' ${debian_chroot:+($debian_chroot)}\[\e[32m\]\u@\h\[\e[39m\]:\[\e[34m\]\w\[\e[91m\]$(__git_ps1 "(%s)")\[\e[39m\]\$ '
 fi
 
@@ -84,8 +78,6 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
